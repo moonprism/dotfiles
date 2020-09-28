@@ -1,0 +1,15 @@
+inoremap jk <ESC>
+set hls
+nnoremap <backspace> :nohl<CR>
+
+nnoremap ;p "0p
+vnoremap ;p "0p
+
+set easymotion
+map ; <Plug>(easymotion-prefix)
+
+nnoremap <C-l> :action NextTab<CR>
+nnoremap <C-h> :action PreviousTab<CR>
+nnoremap <C-x> :action CloseEditor<CR>
+map <C-p> :action SearchEverywhere<CR>
+map <C-g> :action FindInPath<CR>

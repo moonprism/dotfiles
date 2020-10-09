@@ -35,3 +35,5 @@ source $ZSH/oh-my-zsh.sh
 # local zsh config
 
 [ -f ~/.my.zsh ] && source ~/.my.zsh
+
+alias ls='exa'

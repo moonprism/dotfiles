@@ -1,7 +1,7 @@
 # export ZSH="/home/aqua/.oh-my-zsh"
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="ys"
+ZSH_THEME="agnoster"
 
 alias q="exit"
 
@@ -23,6 +23,11 @@ plugins=(
 	extract 
 	vi-mode
 	tmux
+	z
+	sudo
+	h
+	zsh-syntax-highlighting
+	zsh-autosuggestions
 )
 
 # auto start tmux
@@ -36,4 +41,8 @@ source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.my.zsh ] && source ~/.my.zsh
 
+# source <(curl -sSL git.io/forgit)
+
 alias ls='exa'
+alias cat='bat'
+alias j='z'

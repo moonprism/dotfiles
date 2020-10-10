@@ -8,3 +8,5 @@ do
     ln -s "${PWD}/$file" ~
   fi
 done
+
+# TODO install bat exa tmux-tmp ack

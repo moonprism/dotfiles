@@ -33,4 +33,4 @@ tmux 安装tpm后 `<C-a>` + `I` install plugins
 
 #### ideaVim
 
-[neovim配置](https://github.com/moonprism/nvim), 继承其中除插件外的大部分操作
+继承 [neovim配置](https://github.com/moonprism/nvim)

@@ -3,12 +3,9 @@ set hls
 set ignorecase
 nnoremap <backspace> :nohl<CR>
 
-map <C-p> "0p
+let mapleader=","
 
-nnoremap <Leader>y "+y
-vnoremap <Leader>y "+y
-nnoremap <Leader>p "+p
-vnoremap <Leader>p "+p
+map <Leader>p "0p
 
 set easymotion
 map ; <Plug>(easymotion-prefix)

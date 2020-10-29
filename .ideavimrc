@@ -13,6 +13,6 @@ map ; <Plug>(easymotion-prefix)
 nnoremap <A-l> :action NextTab<CR>
 nnoremap <A-h> :action PreviousTab<CR>
 nnoremap <A-x> :action CloseEditor<CR>
-" map <C-s> :action SearchEverywhere<CR>
+map <C-p> :action SearchEverywhere<CR>
 map <C-g> :action FindInPath<CR>
 map ,r :action RenameElement<CR>

@@ -23,10 +23,9 @@ plugins=(
 	git
 	extract 
 	vi-mode
-	tmux
 	z
 	sudo
-	h
+	fzf
 	zsh-syntax-highlighting
 	zsh-autosuggestions
 )

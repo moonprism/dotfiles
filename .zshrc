@@ -1,7 +1,7 @@
 # export ZSH="/home/aqua/.oh-my-zsh"
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="agnoster"
+ZSH_THEME="ys" #"agnoster"
 
 set -o vi
 
@@ -32,14 +32,11 @@ plugins=(
 	zsh-autosuggestions
 )
 
-# auto start tmux
-ZSH_TMUX_AUTOSTART=true
-
 source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# local zsh config
+# load my system zsh config
 
 [ -f ~/.my.zsh ] && source ~/.my.zsh
 

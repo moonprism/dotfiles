@@ -16,5 +16,3 @@ nnoremap <A-x> :action CloseEditor<CR>
 map <C-p> :action SearchEverywhere<CR>
 map <C-g> :action FindInPath<CR>
 map ,r :action RenameElement<CR>
-
-map <A-y> :action EditorCopy<CR>

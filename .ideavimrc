@@ -1,7 +1,7 @@
 inoremap jk <ESC>
 set hls
 set ignorecase
-nnoremap <backspace> :nohl<CR>
+nnoremap <silent> <C-l> :nohl<CR>
 
 let mapleader=","
 
@@ -15,4 +15,17 @@ nnoremap <A-h> :action PreviousTab<CR>
 nnoremap <A-x> :action CloseEditor<CR>
 map <C-p> :action SearchEverywhere<CR>
 map <C-g> :action FindInPath<CR>
-map ,r :action RenameElement<CR>
+nnoremap <Leader>t :action FileStructurePopup<CR>
+
+nnoremap <Leader>r :action RenameElement<CR>
+
+nnoremap <Leader>v :action Tool_External Tools_nvim<CR>
+
+" git
+nnoremap gco :action Vcs.RollbackChangedLines<CR>
+nnoremap gs :action VcsShowCurrentChangeMarker<CR>
+nnoremap gitn :action VcsShowNextChangeMarker<CR>
+nnoremap gitp :action VcsShowPrevChangeMarker<CR>
+
+" ideaVim 插入模式为什么不默认设置<C-j>
+inoremap <C-j> <CR>

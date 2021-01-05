@@ -1,16 +1,16 @@
-ideaVim, tmux, zsh
+自用 linux 下 dotfiles
 
-### install
+### zsh
 
-```
-source bootstrap.sh
-```
+安装ohmyzsh及相关插件
 
-phpstorm 安装 ideaVim 相关插件
+### ideaVim
 
-tmux 安装tpm后 `<C-a>` + `I` install plugins
+[phpstorm整合vim](https://kicoe.com/article/id/44)
 
-#### tmux
+[neovim配置](https://github.com/moonprism/nvim)
+
+### tmux
 
 复制、分屏选择都采用vi模式
 
@@ -20,8 +20,5 @@ tmux 安装tpm后 `<C-a>` + `I` install plugins
 - `r` 重载配置
 - `S` 保存session
 - `R` 载入session
-- ...
 
-#### ideaVim
-
-继承 [neovim配置](https://github.com/moonprism/nvim)
+> xmodmap(换了键盘, 只能软件映射了)

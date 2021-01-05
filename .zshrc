@@ -1,7 +1,7 @@
 # export ZSH="/home/aqua/.oh-my-zsh"
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="agnoster"
+ZSH_THEME="ys" #"agnoster"
 
 set -o vi
 
@@ -30,7 +30,10 @@ plugins=(
 	fzf
 	zsh-syntax-highlighting
 	zsh-autosuggestions
+	tmux
 )
+
+# ZSH_TMUX_AUTOSTART=true
 
 source $ZSH/oh-my-zsh.sh
 
@@ -45,3 +48,5 @@ source $ZSH/oh-my-zsh.sh
 alias ls='exa'
 alias cat='bat'
 alias j='z'
+
+xmodmap ~/.Xmodmap

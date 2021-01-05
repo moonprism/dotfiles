@@ -29,3 +29,5 @@ nnoremap gitp :action VcsShowPrevChangeMarker<CR>
 
 " ideaVim 插入模式为什么不默认设置<C-j>
 inoremap <C-j> <CR>
+
+nnoremap <A-s> :action Tool_External Tools_terminal<CR>

@@ -1,6 +1,0 @@
-#!/bin/bash
-
-terminal="gnome-terminal"
-nvim="/home/aqua/Downloads/nvim-linux64/bin/nvim"
-
-$terminal --hide-menubar --title="nvim" -e "$nvim $1 +$2 -c \"norm $(($3-1))l\""

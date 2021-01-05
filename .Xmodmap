@@ -1,0 +1,5 @@
+clear lock
+clear control
+! Caps_Lock => Control
+add control = Caps_Lock Control_L Control_R
+keycode 66 = Control_L

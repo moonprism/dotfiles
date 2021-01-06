@@ -11,7 +11,9 @@ set easymotion
 map ; <Plug>(easymotion-prefix)
 
 nnoremap <A-l> :action NextTab<CR>
+inoremap <A-l> <ESC>:action NextTab<CR>
 nnoremap <A-h> :action PreviousTab<CR>
+inoremap <A-h> <ESC>:action PreviousTab<CR>
 nnoremap <A-x> :action CloseEditor<CR>
 map <C-p> :action SearchEverywhere<CR>
 map <C-g> :action FindInPath<CR>

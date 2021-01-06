@@ -21,4 +21,6 @@
 - `S` 保存session
 - `R` 载入session
 
-> xmodmap(换了键盘, 只能软件映射了)
+* xmodmap 换了键盘, 只能软件映射了
+
+* spellfile vim 拼写检查

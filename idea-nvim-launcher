@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# todo iTerm2
+
 terminal="gnome-terminal"
 nvim="/home/aqua/Downloads/nvim-linux64/bin/nvim"
 

@@ -1,7 +1,7 @@
 # export ZSH="/home/aqua/.oh-my-zsh"
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="agnoster"
+ZSH_THEME="ys" #"agnoster"
 
 set -o vi
 
@@ -28,8 +28,6 @@ plugins=(
 	z
 	sudo
 	fzf
-	zsh-syntax-highlighting
-	zsh-autosuggestions
 	tmux
 )
 
@@ -48,5 +46,9 @@ source $ZSH/oh-my-zsh.sh
 alias ls='exa'
 alias cat='bat'
 alias j='z'
+export HOMEBREW_NO_AUTO_UPDATE=true
 
-xmodmap ~/.Xmodmap
+export PATH="/usr/local/opt/php@7.2/bin:/usr/local/opt/php@7.2/sbin:$PATH"
+export PATH="/usr/local/opt/node@12/bin:$PATH"
+source /Users/yuanguoan/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh

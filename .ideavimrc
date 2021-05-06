@@ -1,7 +1,7 @@
 inoremap jk <ESC>
 set hls
 set ignorecase
-nnoremap <silent> <C-l> :nohl<CR>
+nnoremap <silent> <Backspace> :nohl<CR><Backspace>
 
 let mapleader=","
 
@@ -10,11 +10,11 @@ map <Leader>p "0p
 set easymotion
 map ; <Plug>(easymotion-prefix)
 
-nnoremap <A-l> :action NextTab<CR>
-inoremap <A-l> <ESC>:action NextTab<CR>
-nnoremap <A-h> :action PreviousTab<CR>
-inoremap <A-h> <ESC>:action PreviousTab<CR>
-nnoremap <A-x> :action CloseEditor<CR>
+nnoremap <C-l> :action NextTab<CR>
+inoremap <C-l> <ESC>:action NextTab<CR>
+nnoremap <C-h> :action PreviousTab<CR>
+inoremap <C-h> <ESC>:action PreviousTab<CR>
+nnoremap <C-x> :action CloseEditor<CR>
 map <C-p> :action SearchEverywhere<CR>
 map <C-g> :action FindInPath<CR>
 nnoremap <Leader>t :action FileStructurePopup<CR>
@@ -29,7 +29,5 @@ nnoremap gs :action VcsShowCurrentChangeMarker<CR>
 nnoremap gitn :action VcsShowNextChangeMarker<CR>
 nnoremap gitp :action VcsShowPrevChangeMarker<CR>
 
-" ideaVim 插入模式为什么不默认设置<C-j>
+" mac下改系统，这里可以删了
 inoremap <C-j> <CR>
-
-nnoremap <A-s> :action Tool_External Tools_terminal<CR>

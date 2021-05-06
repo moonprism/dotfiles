@@ -9,4 +9,4 @@ do
   fi
 done
 
-# TODO install bat exa tmux-tmp ack
+# TODO install bat exa tmux-tmp ack rainbarf

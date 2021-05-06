@@ -1,8 +1,8 @@
-自用 linux 下 dotfiles
+自用 Linux/Mac 下 dotfiles
 
 ### zsh
 
-安装ohmyzsh及相关插件
+安装 ohmyzsh 及相关插件
 
 ### ideaVim
 
@@ -21,6 +21,4 @@
 - `S` 保存session
 - `R` 载入session
 
-* xmodmap 换了键盘, 只能软件映射了
-
-* spellfile vim 拼写检查
+* xmodmap 换了键盘, 只能软件映射了（mac下使用karabiner-elements）。

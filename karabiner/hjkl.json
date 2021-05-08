@@ -2,7 +2,7 @@
     "title": "方向映射",
     "rules": [
         {
-            "description": "Alt-hjkl",
+            "description": "hjkl",
             "manipulators": [
                 {
                     "type": "basic",

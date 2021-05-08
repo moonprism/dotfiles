@@ -1,21 +1,21 @@
 {
-    "title": "Enter映射",
+    "title": "Tab映射",
     "rules": [
         {
-            "description": "C-j",
+            "description": "Alt-Tab",
             "manipulators": [
                 {
                   "type": "basic",
                   "from": {
-                      "key_code": "j",
+                      "key_code": "tab",
                       "modifiers": {
-                          "mandatory": ["left_control"],
+                          "mandatory": ["left_option"],
                           "optional": ["any"]
                       }
                   },
                   "to": [
                     {
-                      "key_code": "delete_or_backspace",
+                      "key_code": "tab",
                       "modifiers": ["command"]
                     }
                   ]

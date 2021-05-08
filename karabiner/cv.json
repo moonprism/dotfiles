@@ -1,0 +1,74 @@
+{
+    "title": "复制粘贴映射",
+    "rules": [
+        {
+            "description": "Alt+y/p",
+            "manipulators": [
+                {
+                  "type": "basic",
+                  "from": {
+                      "key_code": "y",
+                      "modifiers": {
+                          "mandatory": ["left_option"],
+                          "optional": ["any"]
+                      }
+                  },
+                  "to": [
+                      {
+                          "key_code": "c",
+                          "modifiers": ["command"]
+                      }
+                  ]
+                },
+                {
+                  "type": "basic",
+                  "from": {
+                      "key_code": "p",
+                      "modifiers": {
+                          "mandatory": ["left_option"],
+                          "optional": ["any"]
+                      }
+                  },
+                  "to": [
+                      {
+                          "key_code": "v",
+                          "modifiers": ["command"]
+                      }
+                  ]
+                },
+                {
+                  "type": "basic",
+                  "from": {
+                    "key_code": "c",
+                    "modifiers": {
+                      "mandatory": ["left_option"],
+                      "optional": ["any"]
+                    }
+                  },
+                  "to": [
+                    {
+                      "key_code": "c",
+                      "modifiers": ["command"]
+                    }
+                  ]
+                },
+                {
+                  "type": "basic",
+                  "from": {
+                    "key_code": "v",
+                    "modifiers": {
+                      "mandatory": ["left_option"],
+                      "optional": ["any"]
+                    }
+                  },
+                  "to": [
+                    {
+                      "key_code": "v",
+                      "modifiers": ["command"]
+                    }
+                  ]
+                }
+            ]
+        }
+    ]
+}

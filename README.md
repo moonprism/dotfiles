@@ -1,5 +1,7 @@
 自用 Linux/Mac 下 dotfiles
 
+终端字体：[Nerd Fonts Lilex](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Lilex)
+
 ### zsh
 
 安装 ohmyzsh 及相关插件

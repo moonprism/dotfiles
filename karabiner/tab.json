@@ -1,26 +1,26 @@
 {
-    "title": "Tab映射",
-    "rules": [
+  "title": "应用切换",
+  "rules": [
+    {
+      "description": "Alt-Tab",
+      "manipulators": [
         {
-            "description": "Alt-Tab",
-            "manipulators": [
-                {
-                  "type": "basic",
-                  "from": {
-                      "key_code": "tab",
-                      "modifiers": {
-                          "mandatory": ["left_option"],
-                          "optional": ["any"]
-                      }
-                  },
-                  "to": [
-                    {
-                      "key_code": "tab",
-                      "modifiers": ["command"]
-                    }
-                  ]
-                }
-            ]
+          "type": "basic",
+          "from": {
+            "key_code": "tab",
+            "modifiers": {
+              "mandatory": ["left_option"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "tab",
+              "modifiers": ["command"]
+            }
+          ]
         }
-    ]
+      ]
+    }
+  ]
 }

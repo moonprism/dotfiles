@@ -1,28 +1,42 @@
 inoremap jk <ESC>
 set hls
 set ignorecase
-nnoremap <silent> <Backspace> :nohl<CR>
+nnoremap <silent> b :nohl<CR>b
 
-let mapleader=","
+let mapleader="\<space>"
 
-map <Leader>p "0p
+nmap <Leader>p "0p
 
 set easymotion
-map ; <Plug>(easymotion-prefix)
+nmap ; <Plug>(easymotion-prefix)
+xmap ; <Plug>(easymotion-prefix)
 
 nnoremap <C-l> :action NextTab<CR>
 nnoremap <C-h> :action PreviousTab<CR>
 nnoremap <C-x> :action CloseEditor<CR>
-map <C-p> :action SearchEverywhere<CR>
-map <C-g> :action FindInPath<CR>
+
+noremap <C-p> :action SearchEverywhere<CR>
+noremap <C-g> :action FindInPath<CR>
+
+xnoremap <Leader>e <ESC>
+
+nnoremap <Leader>o o<ESC>
+
+" 再按一次<space>可以预览
 nnoremap <Leader>t :action FileStructurePopup<CR>
 
-nnoremap <Leader>r :action RenameElement<CR>
-
-" nnoremap <Leader>v :action Tool_External Tools_nvim<CR>
+nnoremap ,r :action RenameElement<CR>
 
 " git
 nnoremap gco :action Vcs.RollbackChangedLines<CR>
 nnoremap gs :action VcsShowCurrentChangeMarker<CR>
-nnoremap gitn :action VcsShowNextChangeMarker<CR>
-nnoremap gitp :action VcsShowPrevChangeMarker<CR>
+nnoremap gtn :action VcsShowNextChangeMarker<CR>
+nnoremap gtp :action VcsShowPrevChangeMarker<CR>
+nnoremap gta :action Annotate<CR>
+
+nnoremap ,cc :action CommentByLineComment<CR>
+vnoremap ,cc :action CommentByBlockComment<CR>
+
+nnoremap vib {jV}
+
+nnoremap ,v :action Tool_External Tools_nvim<CR>

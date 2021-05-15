@@ -1,4 +1,4 @@
-自用 Linux/Mac 下 dotfiles
+## Moonprism's dotfiles
 
 终端字体：[Nerd Fonts Lilex](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Lilex)
 
@@ -7,6 +7,8 @@
 安装 ohmyzsh 及相关插件
 
 ### ideaVim
+
+安装 ideavim 和 ideavim-easymotion 插件
 
 [phpstorm整合vim](https://kicoe.com/article/id/44)
 
@@ -24,3 +26,5 @@
 - `R` 载入session
 
 * xmodmap 换了键盘, 只能软件映射了（mac下使用karabiner-elements）。
+
+![](https://raw.githubusercontent.com/moonprism/cdn/master/image/karabiner.png)

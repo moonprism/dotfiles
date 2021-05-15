@@ -2,6 +2,14 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="ys" #"agnoster"
 
+# system
+
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+	BROWSER="open"
+elif [[ "$OSTYPE" =~ ^linux ]] ;then
+	BROWSER="google-chrome"
+fi
+
 # alias
 
 alias gs="git status"
@@ -19,8 +27,8 @@ alias -s xz="tar -xvJf"
 
 alias -s go="go run"
 
-alias simpleServer="open http://localhost:8000; python -m SimpleHTTPServer"
-alias phpServer="open http://localhost:8087; php -S 0.0.0.0:8087"
+alias simpleServer="$BROWSER http://localhost:8000; python -m SimpleHTTPServer"
+alias phpServer="$BROWSER http://localhost:8087; php -S 0.0.0.0:8087"
 
 # plugin
 

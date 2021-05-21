@@ -4,19 +4,23 @@ cd "$(dirname "${BASH_SOURCE}")";
 
 for file in `ls -a .`
 do
-  if [[ ! "$file" =~ ^(karabiner|bootstrap.sh|README.md|.git|.|..)$ ]]; then
+  if [[ ! "$file" =~ ^(joplin|karabiner|bootstrap.sh|README.md|.git|.|..)$ ]]; then
     ln -s "${PWD}/$file" ~
   fi
 done
 
 # mac 系统使用karabiner映射按键
 if [[ `uname` == 'Darwin' ]]; then
-  cd karabiner
-  for file in `ls .`
+  for file in `ls karabiner`
   do
-    ln -s "${PWD}/$file" ~/.config/karabiner/assets/complex_modifications
+    ln -s "${PWD}/karabiner/$file" ~/.config/karabiner/assets/complex_modifications
   done
 fi
+
+for file in `ls joplin`
+do
+  ln -s "${PWD}/joplin/$file" ~/.config/joplin
+done
 
 # install zsh plugin 
 

@@ -6,6 +6,13 @@
 
 安装 ohmyzsh 及相关插件
 
+- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+
+外部工具
+
+- fzf
+
 ### ideaVim
 
 安装 ideavim 和 ideavim-easymotion 插件
@@ -16,6 +23,8 @@
 
 ### tmux
 
+安装 tmux 和 tmp 插件管理工具
+
 复制、分屏选择都采用vi模式
 
 - `<C-a>` 指令前缀
@@ -25,6 +34,23 @@
 - `S` 保存session
 - `R` 载入session
 
-* xmodmap 换了键盘, 只能软件映射了（mac下使用karabiner-elements）。
+外部工具
+
+- [rainbarf](https://github.com/creaktive/rainbarf)
+
+### 其他工具
+
+键盘映射
+
+- xmodmap (linux)
+- karabiner-elements (macos)
 
 ![](https://raw.githubusercontent.com/moonprism/cdn/master/image/karabiner.png)
+
+标签切换
+
+- HyperSwitch (macos)
+
+命令行工具
+
+- jq

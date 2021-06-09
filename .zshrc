@@ -28,7 +28,7 @@ alias -s xz="tar -xvJf"
 alias -s go="go run"
 
 alias simpleServer="$BROWSER http://localhost:8000; python -m SimpleHTTPServer"
-alias phpServer="$BROWSER http://localhost:8087; php -S 0.0.0.0:8087"
+alias phpServer="$BROWSER http://localhost:8087; php -S 0.0.0.0:8088"
 
 # plugin
 

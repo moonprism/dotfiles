@@ -2,6 +2,18 @@
 
 终端字体：[Nerd Fonts Lilex](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Lilex)
 
+键盘: IKBC-Poker
+
+映射
+
+- <Alt-h/j/k/l> 光标移动
+- <Alt-c/v>     复制粘贴
+- <Alt-x>       剪切
+- <Alt-f>       搜索
+- <Alt-ESC>     `
+- <Ctrl-h>      回车
+- <Ctrl-j>      换行
+
 ### zsh
 
 安装 ohmyzsh 及相关插件
@@ -17,9 +29,9 @@
 
 安装 ideavim 和 ideavim-easymotion 插件
 
-[phpstorm整合vim](https://kicoe.com/article/id/44)
-
 [neovim配置](https://github.com/moonprism/nvim)
+
+[phpstorm整合vim](https://kicoe.com/article/id/44)
 
 ### tmux
 

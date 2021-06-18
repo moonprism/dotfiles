@@ -29,7 +29,7 @@ alias -s xz='tar -xvJf'
 alias -s go='go run'
 
 alias simpleServer="$BROWSER http://localhost:8000; python -m SimpleHTTPServer"
-alias phpServer="$BROWSER http://localhost:8087; php -S 0.0.0.0:8088"
+alias phpServer="$BROWSER http://localhost:8088; php -S 0.0.0.0:8088"
 
 alias tm0='tmux attach -t 0'
 

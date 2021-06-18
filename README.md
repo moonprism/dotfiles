@@ -50,7 +50,11 @@
 
 - [rainbarf](https://github.com/creaktive/rainbarf)
 
-### 其他工具
+### joplin
+
+终端笔记本, vi键位配置 (还在观望中)
+
+### 其他
 
 键盘映射
 

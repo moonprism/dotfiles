@@ -11,10 +11,10 @@ set easymotion
 nmap ; <Plug>(easymotion-prefix)
 xmap ; <Plug>(easymotion-prefix)
 
+noremap <C-s> :action PreviousTab<CR>
+imap <C-s> <C-o><C-s>
 noremap <C-l> :action NextTab<CR>
 imap <C-l> <C-o><C-l>
-noremap <C-f> :action PreviousTab<CR>
-imap <C-f> <C-o><C-f>
 
 nnoremap <C-x> :action CloseEditor<CR>
 imap <C-x> <C-o><C-p>

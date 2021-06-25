@@ -6,13 +6,13 @@
 
 映射
 
-- <Alt-h/j/k/l> 光标移动
-- <Alt-c/v>     复制粘贴
-- <Alt-x>       剪切
-- <Alt-f>       搜索
-- <Alt-ESC>     `
-- <Ctrl-h>      回车
-- <Ctrl-j>      换行
+- `<Alt-h/j/k/l>` 光标移动
+- `<Alt-c/v>`     复制粘贴
+- `<Alt-x>`       剪切
+- `<Alt-f>`       搜索
+- `<Alt-ESC>`     `
+- `<Ctrl-h>`      回车
+- `<Ctrl-j>`      换行
 
 ### zsh
 
@@ -56,7 +56,7 @@
 
 ### 其他
 
-键盘映射
+键盘映射工具
 
 - xmodmap (linux)
 - karabiner-elements (macos)

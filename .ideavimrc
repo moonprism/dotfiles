@@ -5,7 +5,8 @@ nnoremap <silent> b :nohl<CR>b
 
 let mapleader="\<space>"
 
-nmap <Leader>p "0p
+nnoremap <Leader>p "0p
+vnoremap <Leader>p "0p
 
 set easymotion
 nmap ; <Plug>(easymotion-prefix)

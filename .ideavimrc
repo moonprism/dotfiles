@@ -17,7 +17,6 @@ imap <C-s> <C-o><C-s>
 noremap <C-l> :action NextTab<CR>
 imap <C-l> <C-o><C-l>
 
-nnoremap <silent> <Leader>w :wincmd w<CR>
 nnoremap <Leader>h <C-w>h
 nnoremap <Leader>j <C-w>j
 nnoremap <Leader>k <C-w>k
@@ -34,6 +33,9 @@ imap <C-g> <C-o><C-p>
 xnoremap <Leader>e <ESC>
 
 nnoremap <Leader>o o<ESC>
+
+nnoremap <Leader>w :action ActivateProjectToolWindow<CR>
+nnoremap <Leader>d :action HideActiveWindow<CR>
 
 " 再按一次<space>可以预览
 nnoremap <Leader>t :action FileStructurePopup<CR>

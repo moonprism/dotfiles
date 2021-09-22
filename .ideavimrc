@@ -1,26 +1,20 @@
 inoremap jk <ESC>
 set hls
 set ignorecase
-nnoremap <silent> b :nohl<CR>b
 
-let mapleader="\<space>"
+nnoremap <space>s :nohl<CR>
 
-nnoremap <Leader>p "0p
-vnoremap <Leader>p "0p
+nnoremap <space>p "0p
+vnoremap <space>p "0p
 
 set easymotion
-nmap ; <Plug>(easymotion-prefix)
-xmap ; <Plug>(easymotion-prefix)
+nmap <space>f <Plug>(easymotion-bd-w)
+xmap <space>f <Plug>(easymotion-bd-w)
 
 noremap <C-s> :action PreviousTab<CR>
 imap <C-s> <C-o><C-s>
 noremap <C-l> :action NextTab<CR>
 imap <C-l> <C-o><C-l>
-
-nnoremap <Leader>h <C-w>h
-nnoremap <Leader>j <C-w>j
-nnoremap <Leader>k <C-w>k
-nnoremap <Leader>l <C-w>l
 
 nnoremap <C-x> :action CloseEditor<CR>
 imap <C-x> <C-o><C-p>
@@ -30,17 +24,15 @@ imap <C-p> <C-o><C-p>
 noremap <C-g> :action FindInPath<CR>
 imap <C-g> <C-o><C-p>
 
-xnoremap <Leader>e <ESC>
+nnoremap <space>o o<ESC>
 
-nnoremap <Leader>o o<ESC>
-
-nnoremap <Leader>w :action ActivateProjectToolWindow<CR>
-nnoremap <Leader>d :action HideActiveWindow<CR>
+" nnoremap <Leader>w :action ActivateProjectToolWindow<CR>
+" nnoremap <Leader>d :action HideActiveWindow<CR>
 
 " 再按一次<space>可以预览
-nnoremap <Leader>t :action FileStructurePopup<CR>
+nnoremap <space>/ :action FileStructurePopup<CR>
 
-nnoremap ,r :action RenameElement<CR>
+nnoremap <space>r :action RenameElement<CR>
 
 " git
 nnoremap gco :action Vcs.RollbackChangedLines<CR>
@@ -49,11 +41,9 @@ nnoremap gtn :action VcsShowNextChangeMarker<CR>
 nnoremap gtp :action VcsShowPrevChangeMarker<CR>
 nnoremap gta :action Annotate<CR>
 
-nnoremap ,cc :action CommentByLineComment<CR>
-vnoremap ,cc :action CommentByBlockComment<CR>
+nnoremap <space>c :action CommentByLineComment<CR>
+vnoremap <space>c :action CommentByBlockComment<CR>
 
 nnoremap vib {jV}
 
-nnoremap ,v :action Tool_External Tools_nvim<CR>
-
-nnoremap ,a @a
+" nnoremap ,v :action Tool_External Tools_nvim<CR>

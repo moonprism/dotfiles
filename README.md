@@ -1,4 +1,6 @@
-## Moonprism's dotfiles
+<h1 align="center">
+  <code>.dotfiles</code>
+</h1>
 
 终端字体：[Nerd Fonts Lilex](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Lilex)
 

@@ -1,3 +1,8 @@
+" =====================
+" .ideavimrc
+" 
+" =====================
+
 inoremap jk <ESC>
 set hls
 set ignorecase
@@ -24,6 +29,8 @@ imap <C-p> <C-o><C-p>
 noremap <C-g> :action FindInPath<CR>
 imap <C-g> <C-o><C-p>
 
+nnoremap <C-q> @a
+
 nnoremap <space>o o<ESC>
 
 " nnoremap <Leader>w :action ActivateProjectToolWindow<CR>
@@ -37,9 +44,9 @@ nnoremap <space>r :action RenameElement<CR>
 " git
 nnoremap gco :action Vcs.RollbackChangedLines<CR>
 nnoremap gs :action VcsShowCurrentChangeMarker<CR>
-nnoremap gtn :action VcsShowNextChangeMarker<CR>
-nnoremap gtp :action VcsShowPrevChangeMarker<CR>
-nnoremap gta :action Annotate<CR>
+nnoremap <space>gn :action VcsShowNextChangeMarker<CR>
+nnoremap <space>gp :action VcsShowPrevChangeMarker<CR>
+nnoremap <space>ga :action Annotate<CR>
 
 nnoremap <space>c :action CommentByLineComment<CR>
 vnoremap <space>c :action CommentByBlockComment<CR>

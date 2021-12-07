@@ -51,7 +51,7 @@
 
 外部工具
 
-- [rainbarf](https://github.com/creaktive/rainbarf)
+~~ [rainbarf](https://github.com/creaktive/rainbarf) ~~
 
 ### joplin
 

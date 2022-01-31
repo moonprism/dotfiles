@@ -1,9 +1,0 @@
-#!/bin/bash
-
-terminal="gnome-terminal"
-nvim="/home/aqua/Downloads/nvim-linux64/bin/nvim"
-
-$terminal --geometry=120x35 --hide-menubar --title="nvim" -e "$nvim $1 +$2 -c \"norm $3lh\""
-
-# mac
-# tmux send-keys -t ideavim "vi $1 +$2 -c \"norm $3lh\"" C-m

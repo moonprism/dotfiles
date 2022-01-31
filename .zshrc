@@ -1,57 +1,24 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME='ys' #'agnoster'
+DISABLE_LS_COLORS="true"
 
-# system
-
-if   [[ $OSTYPE =~ ^darwin ]]; then
-	BROWSER='open'
-elif [[ $OSTYPE =~ ^linux ]];  then
-	BROWSER='google-chrome'
-fi
-
-# alias
-
-alias gs='git status'
-
-alias vi='nvim'
-alias vim="nvim -c ':call LoadSession()'"
-alias q='exit'
-alias p='ps aux | grep'
-alias i='_lsofi(){lsof -i:$1};_lsofi'
-
-alias -s gz='tar -xzvf'
-alias -s tgz='tar -xzvf'
-alias -s zip='unzip'
-alias -s bz2='tar -xjvf'
-alias -s xz='tar -xvJf'
-
-alias -s go='go run'
-
-alias simpleServer="$BROWSER http://localhost:8000; python -m SimpleHTTPServer"
-alias phpServer="$BROWSER http://localhost:8088; php -S 0.0.0.0:8088"
-
-alias tm0='tmux attach -t 0'
-
-# plugin
+ZSH_THEME='ys'
 
 plugins=(
 	git
 	extract 
 	vi-mode
 	z
-	sudo
 	fzf
+
+	zsh-syntax-highlighting
+	zsh-autosuggestions
 )
+
+source "$HOME/alias.sh"
 
 source $ZSH/oh-my-zsh.sh
 
-alias ls='exa'
-alias cat='bat'
-alias j='z'
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# load system zsh config
-
-[ -f ~/.my.zsh ] && source ~/.my.zsh
+# fzf
+export FZF_DEFAULT_COMMAND=''
+export FZF_DEFAULT_OPTS="--height=40% --info=inline --margin=0 --padding=0"

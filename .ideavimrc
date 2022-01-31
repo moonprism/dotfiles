@@ -7,7 +7,7 @@ inoremap jk <ESC>
 set hls
 set ignorecase
 
-nnoremap <space>s :nohl<CR>
+nnoremap <ESC> :nohl<CR><ESC>
 
 nnoremap <space>p "0p
 vnoremap <space>p "0p
@@ -28,8 +28,6 @@ noremap <C-p> :action SearchEverywhere<CR>
 imap <C-p> <C-o><C-p>
 noremap <C-g> :action FindInPath<CR>
 imap <C-g> <C-o><C-p>
-
-nnoremap <C-q> @a
 
 nnoremap <space>o o<ESC>
 

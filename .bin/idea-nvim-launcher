@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# arch
+vi="nvim"
+gnome-terminal --geometry=120x35 --hide-menubar --title="$1" -e "$vi $1 +$2 -c \"norm $3lh\""
+
+# mac
+# tmux send-keys -t ideavim "vi $1 +$2 -c \"norm $3lh\"" C-m

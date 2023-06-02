@@ -2,37 +2,25 @@
 
 ## arch linux
 
-sudo pacman -S fzf
+sudo pacman -S kitty fzf zsh tmux
+
+# dependency
+sudo pacman -S ruby xsel
 
 # oh-my-zsh plugin
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-yay -S kitty bat exa
+yay -S bat exa
+
+TP="${HOME}/.tmux_plugins"
+mkdir ${TP}
+git clone https://github.com/tmux-plugins/tmux-yank ${TP}/yank
+git clone https://github.com/tmux-plugins/tmux-cpu ${TP}/cpu
+git clone https://github.com/tmux-plugins/tmux-sensible $TP/sensible
+git clone https://github.com/schasse/tmux-jump $TP/jump
+
 
 # tmux-tmp
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
-# fd
-# rg
-
-ln -s "${PWD}/.zshrc" $HOME
-ln -s "${PWD}/alias.sh" $HOME
-ln -s "${PWD}/.tmux.conf" $HOME
-ln -s "${PWD}/.ideavimrc" $HOME
-
-# ln .config files
-function rr() {
-  for file in `ls $1` 
-  do
-    if [ -d "$1/$file" ]
-    then
-      mkdir -p $HOME/$1/$file
-      rr $1/$file
-    else
-      ln -s ${PWD}/$1/$file $HOME/$1/
-    fi
-  done
-}
-rr ".config"
+# git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

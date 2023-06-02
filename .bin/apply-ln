@@ -1,0 +1,18 @@
+#!/bin/sh
+
+fs=(".zshrc" "alias.sh" ".zshrc.mine.fzf" ".tmux.conf" "ideavimrc")
+
+for f in ${fs[@]}; do
+  ln -s ${PWD}/$f $HOME/
+done
+
+function ln_dots() {
+  for f in `ls $1`; do
+    if [ -d ${PWD}/$1/$f ] && [ -d $HOME/$1/$f ]; then
+      ln_dots $1/$f
+    else
+      ln -s ${PWD}/$1/$f $HOME/$1/
+    fi
+  done
+}
+ln_dots ".config"

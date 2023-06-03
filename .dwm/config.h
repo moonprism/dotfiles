@@ -5,8 +5,11 @@ static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Liga SFMono Nerd Font:size=11" };
-static const char dmenufont[]       = "Liga SFMono Nerd Font:size=11";
+static const char *fonts[]          = {
+  "Liga SFMono Nerd Font:size=10",
+  "Noto Sans CJK SC:size=10",
+};
+static const char dmenufont[]       = "Liga SFMono Nerd Font:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -26,9 +29,9 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class                  instance          title   tags mask  switchtotag  isfloating  monitor */
-	{ "netease-cloud-music",  NULL,             NULL,   1 << 5,    1,           0,         -1 },
-	{ "Google-chrome",        "google-chrome",  NULL,   1 << 1,    1,           0,         -1 },
+	/* class                  instance          title   tags mask isfloating monitor */
+	{ "netease-cloud-music",  NULL,             NULL,   1 << 5,   0,         -1 },
+	{ "Google-chrome",        "google-chrome",  NULL,   1 << 1,   0,         -1 },
 };
 
 /* layout(s) */
@@ -72,8 +75,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+	{ MODKEY|ShiftMask,             XK_h,      setmfact,       {.f = -0.05} },
+	{ MODKEY|ShiftMask,             XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },

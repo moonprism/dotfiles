@@ -10,15 +10,25 @@ static const char *fonts[]          = {
   "Noto Sans CJK SC:size=10",
 };
 static const char dmenufont[]       = "Liga SFMono Nerd Font:size=10";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+
+static const char col_nord0[]       = "#2E3440";
+static const char col_nord1[]       = "#3B4252";
+static const char col_nord2[]       = "#434C5E";
+static const char col_nord3[]       = "#4C566A";
+
+static const char col_nord4[]       = "#D8DEE9";
+static const char col_nord5[]       = "#E5E9F0";
+static const char col_nord6[]       = "#ECEFF4";
+
+static const char col_nord7[]       = "#8FBCBB";
+static const char col_nord8[]       = "#88C0D0";
+static const char col_nord9[]       = "#81A1C1";
+static const char col_norda[]       = "#5E81AC";
+
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeNorm] = { col_nord4, col_nord1, col_nord0 },
+	[SchemeSel]  = { col_nord0, col_nord9, col_norda },
 };
 
 /* tagging */
@@ -60,7 +70,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_nord1, "-nf", col_nord4, "-sb", col_nord9, "-sf", col_nord0, NULL };
 static const char *termcmd[]  = { "kitty", NULL };
 
 static const char *ncmusic[] = { "netease-cloud-music", "--force-device-scale-factor=2" };

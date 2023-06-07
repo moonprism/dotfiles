@@ -1,6 +1,6 @@
 #!/bin/sh
 
-fs=(".zshrc" "alias.sh" ".zshrc.mine.fzf" ".tmux.conf" "ideavimrc")
+fs=(".zshrc" "alias.sh" ".zshrc.mine.fzf" ".tmux.conf" "ideavimrc" ".sxhkdrc")
 
 for f in ${fs[@]}; do
   ln -s ${PWD}/$f $HOME/

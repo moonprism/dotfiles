@@ -1,0 +1,12 @@
+XF86AudioRaiseVolume; @XF86AudioRaiseVolume
+	amixer sset Master 5%+
+XF86AudioLowerVolume; @XF86AudioLowerVolume
+	amixer sset Master 5%-
+# ...
+XF86AudioMute; @XF86AudioMute
+	amixer sset Master 50%
+
+XF86MonBrightnessDown; @XF86MonBrightnessDown
+	light -U 5
+XF86MonBrightnessUp; @XF86MonBrightnessUp
+	light -A 5

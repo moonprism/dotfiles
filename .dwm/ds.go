@@ -106,7 +106,7 @@ func getMemInfo() string {
 		}
 	}
 	p := (total - available) * 100.0 / total
-	return " " + fmt.Sprintf("%.1f%%", p)
+	return " " + fmt.Sprintf("%.f%%", p)
 }
 
 var timeIconArr = [12]string{" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "}

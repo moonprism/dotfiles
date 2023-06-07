@@ -40,8 +40,10 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class                  instance          title   tags mask isfloating monitor */
-	{ "netease-cloud-music",  NULL,             NULL,   1 << 5,   0,         -1 },
 	{ "Google-chrome",        "google-chrome",  NULL,   1 << 1,   0,         -1 },
+	{ "QQ",                   "qq",             NULL,   1 << 3,   1,         -1 },
+	{ "netease-cloud-music",  NULL,             NULL,   1 << 5,   0,         -1 },
+	{ "calibre",              "calibre-gui",    NULL,   1 << 8,   0,         -1 },
 };
 
 /* layout(s) */
@@ -81,8 +83,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_z,      spawn,          {.v = ncmusic } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
-	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
+	{ MODKEY,                       XK_Left,   focusstack,     {.i = -1 } },
+	{ MODKEY,                       XK_Right,  focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_h,      setmfact,       {.f = -0.05} },

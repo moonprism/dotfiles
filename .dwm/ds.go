@@ -8,6 +8,10 @@ import (
 	"io/ioutil"
 	"math"
 	"strconv"
+	"fmt"
+	"runtime"
+	"os"
+	"bufio"
 )
 
 var (
@@ -45,7 +49,7 @@ func getPower() string {
 		goConversion_v_ := math.Ceil(float64(capacityInt) * (float64(powerIconCount)/100))
 		powerIcon = powerIconArr[int(goConversion_v_)-1]
 	}
-	return powerIcon + " " + capacityStr + "%"
+	return powerIcon// + " " + capacityStr + "%"
 }
 
 var dwmVersion string
@@ -63,10 +67,62 @@ func getDwmVersion() string {
 	return dwmVersion
 }
 
+var cores = runtime.NumCPU()
+
+func getLoadAVG() string {
+	var load1,load5,load15 float32
+	var loadavg, err = ioutil.ReadFile("/proc/loadavg")
+	if err != nil {
+		panic(err)
+	}
+	_, err = fmt.Sscanf(string(loadavg), "%f %f %f", &load1, &load5, &load15)
+	if err != nil {
+		panic(err)
+	}
+	return " " + fmt.Sprintf("%.2f,%.1f,%.1f/%d", load1, load5, load15, cores)
+}
+
+func getMemInfo() string {
+	file, err := os.Open("/proc/meminfo")
+	if err != nil {
+		panic(err)
+	}
+	defer file.Close()
+
+	var total, available = -1.0, -1.0
+	for info := bufio.NewScanner(file); info.Scan(); {
+		var prop, val = "", 0.0
+		if _, err = fmt.Sscanf(info.Text(), "%s %f", &prop, &val); err != nil {
+			panic(err)
+		}
+		if prop == "MemTotal:" {
+			total = val
+		}
+		if prop == "MemAvailable:" {
+			available = val
+		}
+		if total != -1.0 && available != -1.0 {
+			break
+		}
+	}
+	p := (total - available) * 100.0 / total
+	return " " + fmt.Sprintf("%.1f%%", p)
+}
+
+var timeIconArr = [12]string{" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "}
+
+func getTime() string {
+	var now = time.Now()
+	var hour = now.Hour()
+	return timeIconArr[hour%12-1] + fmt.Sprintf("%d:%02d", hour, now.Minute())
+}
+
 func main() {
 	for {
 		status := []string{
-			" " + time.Now().Local().Format("1-2 15:04"),
+			getLoadAVG(),
+			getMemInfo(),
+			getTime(),
 			getPower(),
 			getDwmVersion(),
 		}

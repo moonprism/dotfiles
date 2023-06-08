@@ -13,7 +13,13 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-yay -S bat exa
+# sudo pacman -S lsd
 
 # tmux-tmp
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# fcitx5 theme
+git clone https://github.com/tonyfettes/fcitx5-nord.git
+mkdir -p ~/.local/share/fcitx5/themes/
+cd fcitx5-nord
+cp -r Nord-Dark/ Nord-Light/ ~/.local/share/fcitx5/themes/

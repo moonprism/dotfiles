@@ -5,7 +5,8 @@
 sudo pacman -S kitty fzf zsh tmux
 
 # dependency
-sudo pacman -S ruby xsel
+sudo pacman -S xsel # tmux-yank
+sudo pacman -S ruby # tmux-jump
 
 # oh-my-zsh plugin
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
@@ -14,12 +15,5 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 yay -S bat exa
 
-TP="${HOME}/.tmux_plugins"
-mkdir ${TP}
-git clone https://github.com/tmux-plugins/tmux-yank ${TP}/yank
-git clone https://github.com/tmux-plugins/tmux-cpu ${TP}/cpu
-git clone https://github.com/tmux-plugins/tmux-sensible $TP/sensible
-git clone https://github.com/schasse/tmux-jump $TP/jump
-
 # tmux-tmp
-# git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

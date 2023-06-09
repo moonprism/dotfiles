@@ -1,55 +1,62 @@
+// dwm status
+// usage: sudo go build -o /usr/local/bin/ds ./ds.go
+// ♥ from moonprism
+
 package main
 
 import (
-	"os/exec"
-	"time"
+	"bufio"
 	"bytes"
-	"strings"
+	"fmt"
 	"io/ioutil"
 	"math"
-	"strconv"
-	"fmt"
-	"runtime"
 	"os"
-	"bufio"
+	"os/exec"
+	"runtime"
+	"strconv"
+	"strings"
+	"time"
 )
 
 var (
 	powerIconArr = [5]string{" ", " ", " ", " ", " "}
-	powerIconCount = len(powerIconArr)
-	powerIconFi = 0
+	powerIconFi  = 0 // frame index
 )
 
 func getPower() string {
-	var powerIcon string
+
+	icon := ""
 	path := "/sys/class/power_supply/BAT0/"
-	status, err := ioutil.ReadFile(path + "status")
+
+	statusTex, err := ioutil.ReadFile(path + "status")
 	if err != nil {
 		panic(err)
 	}
 
-	capacity, err := ioutil.ReadFile(path + "capacity")
+	capacityTex, err := ioutil.ReadFile(path + "capacity")
 	if err != nil {
 		panic(err)
 	}
-	capacityStr := strings.TrimSpace(string(capacity))
 
-	if strings.TrimSpace(string(status)) == "Charging" {
-		if powerIconFi == powerIconCount-1 {
+	capacity := strings.TrimSpace(string(capacityTex))
+
+	if strings.TrimSpace(string(statusTex)) == "Charging" {
+		// 充电中...动画
+		if powerIconFi == len(powerIconArr)-1 {
 			powerIconFi = 0
 		} else {
 			powerIconFi++
 		}
-		powerIcon = powerIconArr[powerIconFi]
+		icon = powerIconArr[powerIconFi]
 	} else {
-		capacityInt, err := strconv.Atoi(capacityStr)
+		capacityF64, err := strconv.ParseFloat(capacity, 64)
 		if err != nil {
 			panic(err)
 		}
-		goConversion_v_ := math.Ceil(float64(capacityInt) * (float64(powerIconCount)/100))
-		powerIcon = powerIconArr[int(goConversion_v_)-1]
+		goConversion_v_ := math.Ceil(capacityF64 * (float64(len(powerIconArr)) / 100))
+		icon = powerIconArr[int(goConversion_v_)-1]
 	}
-	return powerIcon// + " " + capacityStr + "%"
+	return icon // + " " + capacity + "%"
 }
 
 var dwmVersion string
@@ -58,7 +65,6 @@ func getDwmVersion() string {
 	if dwmVersion != "" {
 		return dwmVersion
 	}
-	// 为啥是stderr呢，想不明白
 	cmd := exec.Command("dwm", "-v")
 	var stderr bytes.Buffer
 	cmd.Stderr = &stderr
@@ -70,13 +76,12 @@ func getDwmVersion() string {
 var cores = runtime.NumCPU()
 
 func getLoadAVG() string {
-	var load1,load5,load15 float32
-	var loadavg, err = ioutil.ReadFile("/proc/loadavg")
+	var load1, load5, load15 float32
+	loadavg, err := ioutil.ReadFile("/proc/loadavg")
 	if err != nil {
 		panic(err)
 	}
-	_, err = fmt.Sscanf(string(loadavg), "%f %f %f", &load1, &load5, &load15)
-	if err != nil {
+	if _, err = fmt.Sscanf(string(loadavg), "%f %f %f", &load1, &load5, &load15); err != nil {
 		panic(err)
 	}
 	return " " + fmt.Sprintf("%.2f,%.1f,%.1f/%d", load1, load5, load15, cores)
@@ -89,9 +94,9 @@ func getMemInfo() string {
 	}
 	defer file.Close()
 
-	var total, available = -1.0, -1.0
+	total, available := -1.0, -1.0
 	for info := bufio.NewScanner(file); info.Scan(); {
-		var prop, val = "", 0.0
+		prop, val := "", 0.0
 		if _, err = fmt.Sscanf(info.Text(), "%s %f", &prop, &val); err != nil {
 			panic(err)
 		}
@@ -112,25 +117,27 @@ func getMemInfo() string {
 var timeIconArr = [12]string{" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "}
 
 func getTime() string {
-	var now = time.Now()
-	var hour = now.Hour()
+	now := time.Now()
+	hour := now.Hour()
 	return timeIconArr[hour%12-1] + fmt.Sprintf("%d:%02d", hour, now.Minute())
 }
 
 func main() {
+	// 如果想显示秒数，请参考: https://github.com/schachmat/gods/blob/75cdf14a346f5ce5d8ca34953456f7f0f98067a8/gods.go#L299
+	t := time.Tick(time.Second)
 	for {
-		status := []string{
-			getLoadAVG(),
-			getMemInfo(),
-			getTime(),
-			getPower(),
-			getDwmVersion(),
+		select {
+		case <-t:
+			status := []string{
+				"",
+				getLoadAVG(),
+				getMemInfo(),
+				getTime(),
+				getPower(),
+				getDwmVersion(),
+			}
+			s := strings.Join(status, " ")
+			exec.Command("xsetroot", "-name", s).Run()
 		}
-
-		s := " " + strings.Join(status, " ")
-
-		exec.Command("xsetroot", "-name", s).Run()
-		var now = time.Now()
-		time.Sleep(now.Truncate(time.Second).Add(time.Second).Sub(now))
 	}
 }

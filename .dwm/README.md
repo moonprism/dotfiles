@@ -1,6 +1,8 @@
-own dwm config
+## My own dwm config
 
-dwm status install
+* version: 6.4
+
+simple status monitor:
 
 ```
 sudo go build -o /usr/local/bin/ds ./ds.go

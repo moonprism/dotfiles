@@ -12,8 +12,8 @@ alias gs='git status'
 alias t0='tmux attach -t 0'
 
 # editor
-alias vi='nvim'
-alias vim="nvim -c ':call LoadSession()'"
+# alias vi='nvim'
+# alias vim="nvim -c ':call LoadSession()'"
 
 # system
 alias q='exit'

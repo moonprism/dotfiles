@@ -24,7 +24,6 @@ var (
 )
 
 func getPower() string {
-
 	icon := ""
 	path := "/sys/class/power_supply/BAT0/"
 
@@ -37,7 +36,6 @@ func getPower() string {
 	if err != nil {
 		panic(err)
 	}
-
 	capacity := strings.TrimSpace(string(capacityTex))
 
 	if strings.TrimSpace(string(statusTex)) == "Charging" {
@@ -94,7 +92,7 @@ func getMemInfo() string {
 	}
 	defer file.Close()
 
-	total, available := -1.0, -1.0
+	total, available := 0.0, 0.0
 	for info := bufio.NewScanner(file); info.Scan(); {
 		prop, val := "", 0.0
 		if _, err = fmt.Sscanf(info.Text(), "%s %f", &prop, &val); err != nil {
@@ -106,7 +104,7 @@ func getMemInfo() string {
 		if prop == "MemAvailable:" {
 			available = val
 		}
-		if total != -1.0 && available != -1.0 {
+		if total != 0.0 && available != 0.0 {
 			break
 		}
 	}

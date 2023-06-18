@@ -8,7 +8,6 @@ import (
 	"bufio"
 	"bytes"
 	"fmt"
-	"io/ioutil"
 	"math"
 	"os"
 	"os/exec"
@@ -27,12 +26,12 @@ func getPower() string {
 	icon := ""
 	path := "/sys/class/power_supply/BAT0/"
 
-	statusTex, err := ioutil.ReadFile(path + "status")
+	statusTex, err := os.ReadFile(path + "status")
 	if err != nil {
 		panic(err)
 	}
 
-	capacityTex, err := ioutil.ReadFile(path + "capacity")
+	capacityTex, err := os.ReadFile(path + "capacity")
 	if err != nil {
 		panic(err)
 	}
@@ -75,7 +74,7 @@ var cores = runtime.NumCPU()
 
 func getLoadAVG() string {
 	var load1, load5, load15 float32
-	loadavg, err := ioutil.ReadFile("/proc/loadavg")
+	loadavg, err := os.ReadFile("/proc/loadavg")
 	if err != nil {
 		panic(err)
 	}
@@ -123,19 +122,16 @@ func getTime() string {
 func main() {
 	// 如果想显示秒数，请参考: https://github.com/schachmat/gods/blob/75cdf14a346f5ce5d8ca34953456f7f0f98067a8/gods.go#L299
 	t := time.Tick(time.Second)
-	for {
-		select {
-		case <-t:
-			status := []string{
-				"",
-				getLoadAVG(),
-				getMemInfo(),
-				getTime(),
-				getPower(),
-				getDwmVersion(),
-			}
-			s := strings.Join(status, " ")
-			exec.Command("xsetroot", "-name", s).Run()
+	for range t {
+		status := []string{
+			"",
+			getLoadAVG(),
+			getMemInfo(),
+			getTime(),
+			getPower(),
+			getDwmVersion(),
 		}
+		s := strings.Join(status, " ")
+		exec.Command("xsetroot", "-name", s).Run()
 	}
 }

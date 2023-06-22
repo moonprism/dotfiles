@@ -116,7 +116,7 @@ var timeIconArr = [12]string{" ", " ", " ", " ", " ", " ", "�
 func getTime() string {
 	now := time.Now()
 	hour := now.Hour()
-	return timeIconArr[hour%12-1] + fmt.Sprintf("%d:%02d", hour, now.Minute())
+	return timeIconArr[hour%12] + fmt.Sprintf("%d:%02d", hour, now.Minute())
 }
 
 func main() {

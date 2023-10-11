@@ -4,11 +4,14 @@
 
 sudo pacman -S kitty fzf zsh tmux
 
+sudo pacman -S sxhkd light alsa-utils
+
 # dependency
 sudo pacman -S xsel # tmux-yank
 sudo pacman -S ruby # tmux-jump
 
-# oh-my-zsh plugin
+# oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting

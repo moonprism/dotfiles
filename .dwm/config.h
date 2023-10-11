@@ -77,13 +77,13 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_nord1, "-nf", col_nord4, "-sb", col_nord9, "-sf", col_nord0, NULL };
 static const char *termcmd[]  = { "kitty", NULL };
 
-static const char *ncmusic[] = { "netease-cloud-music", "--force-device-scale-factor=2" };
+// static const char *ncmusic[] = { "netease-cloud-music", "--force-device-scale-factor=2" };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY|ShiftMask,             XK_z,      spawn,          {.v = ncmusic } },
+	// { MODKEY|ShiftMask,             XK_z,      spawn,          {.v = ncmusic } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_p,      focusstack,     {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_n,      focusstack,     {.i = +1 } },

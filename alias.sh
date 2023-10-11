@@ -31,9 +31,13 @@ alias -s go='go run'
 
 # test
 alias simpleServer="$BROWSER http://localhost:8000; python -m SimpleHTTPServer"
-alias phpServer="$BROWSER http://localhost:8088; php -S 0.0.0.0:8088"
 
 # more
 alias ls='lsd'
 alias cat='bat'
 alias j='z'
+
+#dunst
+alias cl='dunstctl history-clear'
+
+alias icat="kitten icat"

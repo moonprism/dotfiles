@@ -1,6 +1,9 @@
 #!/bin/sh
 
-fs=(".zshrc" "alias.sh" ".zshrc.mine.fzf" ".tmux.conf" "ideavimrc" ".sxhkdrc" ".Xresources")
+fs=(".zshrc" "alias.sh" ".zshrc.mine.fzf" ".tmux.conf" "ideavimrc" ".sxhkdrc" ".Xresources" )
+
+mkdir $HOME/.dwm
+ln -s ${PWD}/.dwm/autostart.sh $HOME/.dwm/
 
 for f in ${fs[@]}; do
   ln -s ${PWD}/$f $HOME/

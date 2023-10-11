@@ -81,7 +81,7 @@ func getLoadAVG() string {
 	if _, err = fmt.Sscanf(string(loadavg), "%f %f %f", &load1, &load5, &load15); err != nil {
 		panic(err)
 	}
-	return " " + fmt.Sprintf("%.2f,%.1f,%.1f/%d", load1, load5, load15, cores)
+	return " " + fmt.Sprintf("%.2f,%.1f,%.1f/%d", load1, load5, load15, cores)
 }
 
 func getMemInfo() string {
@@ -108,7 +108,7 @@ func getMemInfo() string {
 		}
 	}
 	p := (total - available) * 100.0 / total
-	return " " + fmt.Sprintf("%.f%%", p)
+	return "󰆼 " + fmt.Sprintf("%.f%%", p)
 }
 
 var timeIconArr = [12]string{" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "}

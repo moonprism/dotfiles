@@ -2,7 +2,7 @@
 if   [[ $OSTYPE =~ ^darwin ]]; then
 	BROWSER='open'
 elif [[ $OSTYPE =~ ^linux ]];  then
-	BROWSER='google-chrome'
+	BROWSER='google-chrome-stable'
 fi
 
 # git
@@ -30,12 +30,13 @@ alias -s xz='tar -xvJf'
 alias -s go='go run'
 
 # test
-alias simpleServer="$BROWSER http://localhost:8000; python -m SimpleHTTPServer"
+alias simpleServer="$BROWSER http://localhost:8000 & ; python3 -m http.server 8000"
 
 # more
 alias ls='lsd'
 alias cat='bat'
 alias j='z'
+alias t='tmux'
 
 #dunst
 alias cl='dunstctl history-clear'

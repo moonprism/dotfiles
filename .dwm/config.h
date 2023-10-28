@@ -43,8 +43,9 @@ static const Rule rules[] = {
 	 */
 	/* class                  instance          title   tags mask isfloating monitor */
 	{ "Google-chrome",        "google-chrome",  NULL,   1 << 1,   0,         -1 },
+	{ "obsidian",             "obsidian",       NULL,   1 << 2,   0,         -1 },
 	{ "QQ",                   "qq",             NULL,   1 << 3,   1,         -1 },
-	{ "netease-cloud-music",  NULL,             NULL,   1 << 5,   0,         -1 },
+	/* { "netease-cloud-music",  NULL,             NULL,   1 << 5,   0,         -1 }, */
 	{ "calibre",              "calibre-gui",    NULL,   1 << 8,   0,         -1 },
 };
 
@@ -79,11 +80,16 @@ static const char *termcmd[]  = { "kitty", NULL };
 
 // static const char *ncmusic[] = { "netease-cloud-music", "--force-device-scale-factor=2" };
 
+static const char *lockcmd[] = { "slock", NULL };
+static const char *cleancmd[] = { "dunstctl", "history-clear" };
+
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	// { MODKEY|ShiftMask,             XK_z,      spawn,          {.v = ncmusic } },
+	{ MODKEY,                       XK_c,      spawn,          {.v = cleancmd } },
+	{ MODKEY|ShiftMask,             XK_c,      spawn,          {.v = lockcmd } },
+	{ MODKEY|ShiftMask,             XK_z,      fullscreen,     {0} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_p,      focusstack,     {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_n,      focusstack,     {.i = +1 } },
@@ -99,7 +105,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY|ShiftMask,             XK_f,      fullscreen,     {0} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },

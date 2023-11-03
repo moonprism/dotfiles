@@ -10,3 +10,6 @@ XF86MonBrightnessDown; @XF86MonBrightnessDown
 	light -U 5
 XF86MonBrightnessUp; @XF86MonBrightnessUp
 	light -A 5
+
+alt + control + a
+	maim -s | xclip -selection clipboard -t image/png -i

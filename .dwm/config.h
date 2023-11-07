@@ -33,7 +33,7 @@ static const char *colors[][3]      = {
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-static const char *tagsalt[] = { "", "", "", "", "", "", "7", "8", "9" };
+static const char *tagsalt[] = { "", "", "󰃵 ", "", "", "", "7", "8", "9" };
 static const int momentaryalttags = 0; /* 1 means alttags will show only when key is held down*/
 
 static const Rule rules[] = {
@@ -43,7 +43,7 @@ static const Rule rules[] = {
 	 */
 	/* class                  instance          title   tags mask isfloating monitor */
 	{ "Google-chrome",        "google-chrome",  NULL,   1 << 1,   0,         -1 },
-	{ "obsidian",             "obsidian",       NULL,   1 << 2,   0,         -1 },
+	{ "Logseq",               "logseq",         NULL,   1 << 2,   0,         -1 },
 	{ "QQ",                   "qq",             NULL,   1 << 3,   1,         -1 },
 	/* { "netease-cloud-music",  NULL,             NULL,   1 << 5,   0,         -1 }, */
 	{ "calibre",              "calibre-gui",    NULL,   1 << 8,   0,         -1 },

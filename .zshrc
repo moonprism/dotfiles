@@ -112,3 +112,4 @@ source $ZSH/oh-my-zsh.sh
 source "$HOME/alias.sh"
 
 source "$HOME/.zshrc.mine.fzf"
+source /usr/share/nvm/init-nvm.sh

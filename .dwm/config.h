@@ -25,15 +25,18 @@ static const char col_nord8[]       = "#88C0D0";
 static const char col_nord9[]       = "#81A1C1";
 static const char col_norda[]       = "#5E81AC";
 
+static const char col_black[] = "#000000";
+static const char col_chrome[] = "#404b69";
+
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_nord4, col_nord1, col_nord0 },
-	[SchemeSel]  = { col_nord0, col_nord9, col_norda },
+	[SchemeSel]  = { col_black, col_chrome, col_norda },
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-static const char *tagsalt[] = { "", "", "󰃵 ", "", "", "", "7", "8", "9" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7"};
+static const char *tagsalt[] = { "", "", "󰃵 ", "4", "5", "6", "7"};
 static const int momentaryalttags = 0; /* 1 means alttags will show only when key is held down*/
 
 static const Rule rules[] = {
@@ -41,12 +44,12 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class                  instance          title   tags mask isfloating monitor */
-	{ "Google-chrome",        "google-chrome",  NULL,   1 << 1,   0,         -1 },
-	{ "Logseq",               "logseq",         NULL,   1 << 2,   0,         -1 },
-	{ "QQ",                   "qq",             NULL,   1 << 3,   1,         -1 },
-	/* { "netease-cloud-music",  NULL,             NULL,   1 << 5,   0,         -1 }, */
-	{ "calibre",              "calibre-gui",    NULL,   1 << 8,   0,         -1 },
+	/* class            instance             title   tags mask isfloating monitor */
+	{ "Google-chrome",  "google-chrome",     NULL,   1 << 1,   0,         -1 },
+	{ "obsidian",       "obsidian",          NULL,   1 << 2,   0,         -1 },
+	{ "Godot",          "Godot_ProjectList", NULL,   1 << 3,   0,         -1 },
+	{ "QQ",             "qq",                NULL,   1 << 4,   1,         -1 },
+	{ "calibre",        "calibre-gui",       NULL,   1 << 6,   0,         -1 },
 };
 
 /* layout(s) */
@@ -78,10 +81,8 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_nord1, "-nf", col_nord4, "-sb", col_nord9, "-sf", col_nord0, NULL };
 static const char *termcmd[]  = { "kitty", NULL };
 
-// static const char *ncmusic[] = { "netease-cloud-music", "--force-device-scale-factor=2" };
-
 static const char *lockcmd[] = { "slock", NULL };
-static const char *cleancmd[] = { "dunstctl", "history-clear" };
+/* static const char *cleancmd[] = { "dunstctl", "history-clear" }; */
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */

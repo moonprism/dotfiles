@@ -81,7 +81,8 @@ func getLoadAVG() string {
 	if _, err = fmt.Sscanf(string(loadavg), "%f %f %f", &load1, &load5, &load15); err != nil {
 		panic(err)
 	}
-	return " " + fmt.Sprintf("%.2f,%.1f,%.1f/%d", load1, load5, load15, cores)
+	// return " " + fmt.Sprintf("%.2f,%.1f,%.1f/%d", load1, load5, load15, cores)
+	return " " + fmt.Sprintf("%.2f", load1)
 }
 
 func getMemInfo() string {
@@ -119,17 +120,30 @@ func getTime() string {
 	return timeIconArr[hour%12] + fmt.Sprintf("%d:%02d", hour, now.Minute())
 }
 
+func getLyric() string {
+	statusTex, err := os.ReadFile("/tmp/lyric_c")
+	if err != nil {
+		if os.IsNotExist(err) {
+			return ""
+		}
+		panic(err)
+	}
+	return string(statusTex)
+}
+
 func main() {
 	// 如果想显示秒数，请参考: https://github.com/schachmat/gods/blob/75cdf14a346f5ce5d8ca34953456f7f0f98067a8/gods.go#L299
 	t := time.Tick(time.Second)
 	for range t {
 		status := []string{
 			"",
+			getLyric(),
 			getLoadAVG(),
 			getMemInfo(),
 			getTime(),
 			getPower(),
-			getDwmVersion(),
+			" ",
+			// getDwmVersion(),
 		}
 		s := strings.Join(status, " ")
 		exec.Command("xsetroot", "-name", s).Run()
